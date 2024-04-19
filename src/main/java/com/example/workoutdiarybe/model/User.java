@@ -18,6 +18,16 @@ public class User implements Serializable{
     private String email;
     private String phone;
     private String imageUrl;
+    private String password;
+    
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     //test comment
     public User() {}
 
