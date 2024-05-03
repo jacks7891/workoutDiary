@@ -20,6 +20,7 @@ public class Training {
     private List<String> exercieses;//diventerà lista di oggetti esercizio
     private Duration duration;//base no recorded data, calcolata sulla media del tempo delle sessioni svolte
     private String level;//livello raggiunto dall'utente per quell'allenamento(forse in percentuale) o numerico o ...
+    private int points;
     private int target;//obbiettivo da raggiungere nell'allenamento
 
     public Training(Long id, String name, List<String> exercieses, Duration duration, String level, int target) {
