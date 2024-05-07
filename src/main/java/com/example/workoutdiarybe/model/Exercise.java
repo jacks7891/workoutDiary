@@ -14,55 +14,82 @@ public class Exercise {
     @Column(nullable = false, updatable = false)
     private Long id;
     private String name;
-    private Duration duration;
+    private int durata;
     private int serie;
     private int reps;//come modello il fatto che può essere a tempo?
     private int points;
     private int target;
 
-    public Exercise(String name, Duration duration, int set, int reps, int points, int target) {
+    public Exercise() {
+    }
+
+    public Exercise(Long id, String name, int durata, int serie, int reps, int points, int target) {
+        this.id = id;
         this.name = name;
-        this.duration = duration;
-        this.serie = set;
+        this.durata = durata;
+        this.serie = serie;
         this.reps = reps;
         this.points = points;
         this.target = target;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
-    public Duration getDuration() {
-        return duration;
+
+    public int getDurata() {
+        return durata;
     }
-    public void setDuration(Duration duration) {
-        this.duration = duration;
+
+    public void setDurata(int durata) {
+        this.durata = durata;
     }
-    public int getSet() {
+
+    public int getSerie() {
         return serie;
     }
-    public void setSet(int set) {
-        this.serie = set;
+
+    public void setSerie(int serie) {
+        this.serie = serie;
     }
+
     public int getReps() {
         return reps;
     }
+
     public void setReps(int reps) {
         this.reps = reps;
     }
+
     public int getPoints() {
         return points;
     }
+
     public void setPoints(int points) {
         this.points = points;
     }
+
     public int getTarget() {
         return target;
     }
+
     public void setTarget(int target) {
         this.target = target;
     }
+
+    
+
     
 }
