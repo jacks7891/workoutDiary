@@ -18,18 +18,28 @@ public class Training {
     private Long id;
     private String name;
     private List<String> exercieses;//diventerà lista di oggetti esercizio
-    private Duration duration;//base no recorded data, calcolata sulla media del tempo delle sessioni svolte
+    private int durata;//base no recorded data, calcolata sulla media del tempo delle sessioni svolte
     private String level;//livello raggiunto dall'utente per quell'allenamento(forse in percentuale) o numerico o ...
-    private int points;
     private int target;//obbiettivo da raggiungere nell'allenamento
+    
+    public Training() {
+    }
 
-    public Training(Long id, String name, List<String> exercieses, Duration duration, String level, int target) {
+    public Training(Long id, String name, List<String> exercieses, int durata, String level, int target) {
         this.id = id;
         this.name = name;
         this.exercieses = exercieses;
-        this.duration = duration;
+        this.durata = durata;
         this.level = level;
         this.target = target;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -48,12 +58,12 @@ public class Training {
         this.exercieses = exercieses;
     }
 
-    public Duration getDuration() {
-        return duration;
+    public int getDurata() {
+        return durata;
     }
 
-    public void setDuration(Duration duration) {
-        this.duration = duration;
+    public void setDurata(int durata) {
+        this.durata = durata;
     }
 
     public String getLevel() {
@@ -71,6 +81,9 @@ public class Training {
     public void setTarget(int target) {
         this.target = target;
     }
+
+    
+
     
 
 }
