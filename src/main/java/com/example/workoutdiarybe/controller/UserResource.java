@@ -10,7 +10,10 @@ import com.example.workoutdiarybe.services.UserService;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
+
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,14 +57,16 @@ public class UserResource {
 
     @DeleteMapping("/delete/{id}")
     @ResponseBody
-    public ResponseEntity<?> deleteUser(@PathVariable("id") Long id){
+    public ResponseEntity<ApiResponse> deleteUser(@PathVariable("id") Long id){
         try{
             userService.deleteUser(id);
             String message = "Entity eliminated";
-            return new ResponseEntity<>(new ApiResponse("200", message), HttpStatus.OK);
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            return new ResponseEntity<>(new ApiResponse("200", message), headers, HttpStatus.OK);
         } catch(Exception e) {
-             System.out.println(e);
-             return new ResponseEntity<>(e, HttpStatus.INTERNAL_SERVER_ERROR);
+             System.out.println("==>>>>ERROR: "+e);
+             return new ResponseEntity<ApiResponse>(new ApiResponse("500", e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
