@@ -1,7 +1,4 @@
 package com.example.workoutdiarybe.model;
-
-
-import java.time.Duration;
 import java.util.List;
 
 import jakarta.persistence.Column;

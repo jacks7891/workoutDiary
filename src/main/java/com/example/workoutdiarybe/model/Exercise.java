@@ -1,7 +1,5 @@
 package com.example.workoutdiarybe.model;
 
-import java.time.Duration;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
