@@ -57,16 +57,18 @@ public class UserResource {
 
     @DeleteMapping("/delete/{id}")
     @ResponseBody
-    public ResponseEntity<ApiResponse> deleteUser(@PathVariable("id") Long id){
+    public ResponseEntity<?> deleteUser(@PathVariable("id") Long id){
         try{
             userService.deleteUser(id);
             String message = "Entity eliminated";
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_JSON);
-            return new ResponseEntity<>(new ApiResponse("200", message), headers, HttpStatus.OK);
+            // HttpHeaders headers = new HttpHeaders();
+            // headers.setContentType(MediaType.APPLICATION_JSON);
+            return ResponseEntity.ok().body(message);
+            //return new ResponseEntity<>(new ApiResponse("200", message, "application/json"), headers, HttpStatus.OK);
         } catch(Exception e) {
-             System.out.println("==>>>>ERROR: "+e);
-             return new ResponseEntity<ApiResponse>(new ApiResponse("500", e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+            
+             //return new ResponseEntity<String>(new ApiResponse("200", "Entity eliminated", "application/json"),  HttpStatus.OK);
+             return ResponseEntity.ok().body("message");
         }
     }
 
