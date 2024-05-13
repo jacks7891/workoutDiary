@@ -14,7 +14,7 @@ public class Training {
     @Column(nullable = false, updatable = false)
     private Long id;
     private String name;
-    private List<String> exercieses;//diventerà lista di oggetti esercizio
+    private List<String> exercises;//diventerà lista di oggetti esercizio
     private int durata;//base no recorded data, calcolata sulla media del tempo delle sessioni svolte
     private String level;//livello raggiunto dall'utente per quell'allenamento(forse in percentuale) o numerico o ...
     private int target;//obbiettivo da raggiungere nell'allenamento
@@ -22,10 +22,10 @@ public class Training {
     public Training() {
     }
 
-    public Training(Long id, String name, List<String> exercieses, int durata, String level, int target) {
+    public Training(Long id, String name, List<String> exercises, int durata, String level, int target) {
         this.id = id;
         this.name = name;
-        this.exercieses = exercieses;
+        this.exercises = exercises;
         this.durata = durata;
         this.level = level;
         this.target = target;
@@ -47,12 +47,12 @@ public class Training {
         this.name = name;
     }
 
-    public List<String> getExercieses() {
-        return exercieses;
+    public List<String> getExercises() {
+        return exercises;
     }
 
-    public void setExercieses(List<String> exercieses) {
-        this.exercieses = exercieses;
+    public void setExercises(List<String> exercises) {
+        this.exercises = exercises;
     }
 
     public int getDurata() {
