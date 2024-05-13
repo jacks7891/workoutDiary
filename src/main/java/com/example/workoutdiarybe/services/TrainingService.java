@@ -2,7 +2,6 @@ package com.example.workoutdiarybe.services;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.workoutdiarybe.exception.UserNotFoundException;
@@ -14,7 +13,6 @@ import jakarta.transaction.Transactional;
 public class TrainingService {
     private final TrainingRepo trainingRepo;
 
-    @Autowired
     public TrainingService(TrainingRepo trainingRepo){
         this.trainingRepo = trainingRepo;
     }
