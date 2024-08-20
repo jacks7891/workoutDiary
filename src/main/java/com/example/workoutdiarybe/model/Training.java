@@ -18,6 +18,7 @@ public class Training {
     private int durata;//base no recorded data, calcolata sulla media del tempo delle sessioni svolte
     private String level;//livello raggiunto dall'utente per quell'allenamento(forse in percentuale) o numerico o ...
     private int target;//obbiettivo da raggiungere nell'allenamento
+    private String imageUrl;
     
     public Training() {
     }
@@ -78,6 +79,15 @@ public class Training {
     public void setTarget(int target) {
         this.target = target;
     }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+    
 
     
 

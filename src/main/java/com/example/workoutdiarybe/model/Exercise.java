@@ -17,6 +17,7 @@ public class Exercise {
     private int reps;//come modello il fatto che può essere a tempo?
     private int points;
     private int target;
+    private String imageUrl;
 
     public Exercise() {
     }
@@ -86,6 +87,15 @@ public class Exercise {
     public void setTarget(int target) {
         this.target = target;
     }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+    
 
     
 
